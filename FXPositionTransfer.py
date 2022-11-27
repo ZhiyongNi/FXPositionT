@@ -8,7 +8,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 
 from QuotationDB import QuotationDB
-from TLCB import TLCB
+from TLCBLPM import TLCBLPM
 
 
 class FXPositionTransfer:
@@ -16,7 +16,7 @@ class FXPositionTransfer:
 
     def FXPositionTransferCommand(self, command):
         if command == 'start':
-            TLCBInstance = TLCB()
+            TLCBInstance = TLCBLPM()
             TLCBInstance.setSleepTime(5)
 
             with ThreadPoolExecutor(max_workers=5) as TPool:  # 创建一个最大容纳数量为8的线程池

@@ -12,7 +12,7 @@ import requests
 from FXPositionDict import FXPositionDict
 
 
-class TLCB:
+class TLCBLPM:
     CurrencyNameList = ['826', '978', '840', '392', '344']
     CurrencyCodeList = ['GBP', 'EUR', 'USD', 'JPY', 'HKD']
 
@@ -77,11 +77,20 @@ class TLCB:
                     FXPositionDictTmp.dataDate = row['dataDate']
                     #FXPositionDictTmp.TimeStamp = datetime.datetime.strptime(
                      #   row['valDate'] + '_' + row['valTime'], "%Y-%m-%d_%H:%M:%S")
-                    #FXPositionDictTmp.SE_Bid = row['buyPrice']
-                    #FXPositionDictTmp.SE_Ask = row['selPrice']
-                    #FXPositionDictTmp.BN_Bid = row['cashBuyPrice']
-                    #FXPositionDictTmp.BN_Ask = row['cashSellPrice']
-                    #FXPositionDictTmp.CurrencyUnit = 100
+                    FXPositionDictTmp.organ = row['organ']
+                    FXPositionDictTmp.currency = row['currency']
+                    FXPositionDictTmp.accountBalance = row['accountBalance']
+                    FXPositionDictTmp.yesterdayAccountBalance = row['yesterdayAccountBalance']
+                    FXPositionDictTmp.accountType = row['accountType']
+                    FXPositionDictTmp.accountRemarks = row['accountRemarks']
+                    FXPositionDictTmp.status = row['status']
+                    FXPositionDictTmp.removeId = row['removeId']
+                    FXPositionDictTmp.legalPerson = row['legalPerson']
+                    FXPositionDictTmp.limitMaxFormat = row['limitMaxFormat']
+                    FXPositionDictTmp.limitMinFormat = row['limitMinFormat']
+                    FXPositionDictTmp.endDayRgy = row['endDayRgy']
+                    FXPositionDictTmp.endDayRgyMin = row['endDayRgyMin']
+                    FXPositionDictTmp.endDayRgyMax = row['endDayRgyMax']
 
                     FXPositionList.append(FXPositionDictTmp)
                 else:
