@@ -57,8 +57,7 @@ class TLCBLPM:
         with open('query.json', encoding='utf-8') as file_obj:
             contents = file_obj.read()
 
-        html = contents.rstrip()
-        text = json.loads(html)
+        text = json.loads(contents.rstrip())
 
         FXPositionList = []
 
